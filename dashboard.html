@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTTS - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.1.3/auth0-spa-js.production.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome to UTTS</h1>
+            <button id="logout-button">Logout</button>
+        </div>
+        <div id="user-id-display"></div>
+
+        <h2>Register an API Key</h2>
+        <form id="register-key-form">
+            <label for="service">Service Name:</label>
+            <input type="text" id="service" placeholder="e.g., OpenAI" required />
+
+            <label for="apiKey">API Key:</label>
+            <input type="text" id="apiKey" placeholder="Enter your API key" required />
+
+            <label for="baseUrl">Base URL:</label>
+            <input type="url" id="baseUrl" placeholder="e.g., https://api.openai.com/v1" required />
+
+            <label for="customHeaders">Custom Headers (JSON):</label>
+            <textarea id="customHeaders" placeholder='e.g., {"Authorization": "Bearer {apiKey}"}'></textarea>
+
+            <button type="submit">Register Key</button>
+        </form>
+        <div id="register-key-message"></div>
+    </div>
+    <script src="utts-sdk.js" type="module"></script>
+    <script src="auth0-config.js" type="module"></script>
+    <script src="app.js" type="module"></script>
+</body>
+</html>
